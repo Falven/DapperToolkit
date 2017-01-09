@@ -1,9 +1,8 @@
 ﻿<ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:sys="using:System">
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-    <sys:String x:Key="CompanyTitle">Dapper-Apps</sys:String>
-    <sys:String x:Key="ApplicationTitle">Dapper Toolkit W</sys:String>
+    <x:String x:Key="CompanyTitle">Dapper-Apps</x:String>
+    <x:String x:Key="ApplicationTitle">Dapper Toolkit W</x:String>
 
 </ResourceDictionary>

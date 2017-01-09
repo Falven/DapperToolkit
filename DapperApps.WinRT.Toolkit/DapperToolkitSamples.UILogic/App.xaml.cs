@@ -58,7 +58,7 @@ namespace DapperToolkitSamples
             // Register app-specific services
             
             // 
-            ViewModelLocationProvider.SetDefaultViewModelFactory((viewModelType) => _container.Resolve(viewModelType));
+            ViewModelLocationProvider.SetDefaultViewModelFactory(viewModelType => _container.Resolve(viewModelType));
             return Task.FromResult<object>(null);
         }
     }
