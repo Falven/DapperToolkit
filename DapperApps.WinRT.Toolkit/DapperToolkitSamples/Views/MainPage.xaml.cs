@@ -57,7 +57,7 @@ namespace DapperToolkitSamples.Views
 
             NavigationCacheMode = NavigationCacheMode.Required;
 
-            ScrollEventListBox.Loaded += ScrollEventListBox_Loaded;
+            //ScrollEventListBox.Loaded += ScrollEventListBox_Loaded;
 
             _articles = new RssArticleCollection();
             for (var i = 0; i < NumberToLoad; ++i)
@@ -74,7 +74,7 @@ namespace DapperToolkitSamples.Views
 
         private void ScrollEventListBox_Loaded(object sender, RoutedEventArgs e)
         {
-            ScrollEventListBox.ItemsSource = _articles;
+            //ScrollEventListBox.ItemsSource = _articles;
         }
 
         private void OnBottomReached(object sender, EventArgs e)

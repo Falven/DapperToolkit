@@ -1,0 +1,10 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <FontFamily x:Key="RalewayLight" >/Assets/Fonts/Raleway-Light.ttf#Raleway Light</FontFamily>
+    <FontFamily x:Key="RalewayRegular" >/Assets/Fonts/Raleway-Regular.ttf#Raleway</FontFamily>
+    <FontFamily x:Key="RalewayLightItalic">/Assets/Fonts/Raleway-LightItalic.ttf#Raleway Light</FontFamily>
+    <FontFamily x:Key="RalewayItalic">/Assets/Fonts/Raleway-Italic.ttf#Raleway</FontFamily>
+    
+</ResourceDictionary>

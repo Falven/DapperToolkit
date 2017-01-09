@@ -4,8 +4,6 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:scrollEvent="using:DapperApps.WinRT.Toolkit.ScrollEvent"
-    xmlns:data="using:DapperToolkitSamples.Data"
     xmlns:mvvm="using:Microsoft.Practices.Prism.Mvvm"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
@@ -18,40 +16,10 @@
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
-            
-            <TextBlock Text="DAPPER TOOLKIT"
-                       Style="{StaticResource PhoneTextNormalStyle}"
-                       Margin="12,0"/>
-            
-            <Grid Grid.Row="1" Margin="12,0,12,0">
-                <ListView>
-                    <ListView.HeaderTemplate>
-                        <DataTemplate>
-                            <TextBlock x:Name="PageTitle"
-                                   Text="samples"
-                                   Margin="9,-7,0,12"
-                                   Style="{StaticResource PhoneTextTitle1Style}"
-                                   controls:TiltEffect.SuppressTilt="True"/>
-                        </DataTemplate>
-                    </ListView.HeaderTemplate>
-                    <phone:LongListSelector.ItemTemplate>
-                        <DataTemplate>
-                            <HyperlinkButton NavigateUri="{Binding Url}"
-                                         Style="{StaticResource HyperlinkEmptyStyle}">
-                                <toolkit:HeaderedContentControl
-                                Style="{StaticResource MultilineHyperlinkStyle}"
-                                Header="{Binding Header}"
-                                Content="{Binding Description}"/>
-                            </HyperlinkButton>
-                        </DataTemplate>
-                    </phone:LongListSelector.ItemTemplate>
-                    <phone:LongListSelector.ListFooterTemplate>
-                        <DataTemplate>
-                            <Rectangle Height="40"/>
-                        </DataTemplate>
-                    </phone:LongListSelector.ListFooterTemplate>
-                </ListView>
-            </Grid>
+
+            <TextBlock Text="{Binding Source={StaticResource ApplicationTitle}, Converter={StaticResource UpperCaseConverter}}"
+                       Style="{StaticResource DapperTextTitleStyle}"/>
+
         </StackPanel>
     </Grid>
 </Page>
