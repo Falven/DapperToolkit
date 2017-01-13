@@ -13,9 +13,9 @@ using System;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
-namespace DapperApps.WinRT.Toolkit.ImageControl
+namespace DapperApps.WinRT.Toolkit.Controls
 {
-    public abstract class ImageControl : Control.Control
+    public abstract class ImageControl : Control
     {
         /// <summary>
         /// The source image for this PTZImage.

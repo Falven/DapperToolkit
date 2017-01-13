@@ -9,17 +9,9 @@
  * To see the article about this app, visit http://www.dapper-apps.com/DapperToolkit
  */
 
-using System;
 using System.Threading.Tasks;
-using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Media.Animation;
-using Windows.UI.Xaml.Navigation;
-using DapperToolkitSamples.Views;
 using Microsoft.Practices.Prism.Mvvm;
-using Microsoft.Practices.Prism.Mvvm.Interfaces;
 using Microsoft.Practices.Unity;
 
 // The Blank Application template is documented at http://go.microsoft.com/fwlink/?LinkId=391641
@@ -28,9 +20,9 @@ namespace DapperToolkitSamples
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.
     /// </summary>
-    public sealed partial class App : MvvmAppBase
+    public sealed partial class App
     {
-        private IUnityContainer _container;
+        private readonly IUnityContainer _container;
 
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
@@ -52,13 +44,16 @@ namespace DapperToolkitSamples
         protected override Task OnInitializeAsync(IActivatedEventArgs args)
         {
             // Register MvvmAppBase services
-            _container.RegisterInstance<ISessionStateService>(SessionStateService);
-            _container.RegisterInstance<INavigationService>(NavigationService);
+            _container.RegisterInstance(SessionStateService);
+            _container.RegisterInstance(NavigationService);
 
             // Register app-specific services
-            
-            // 
-            ViewModelLocationProvider.SetDefaultViewModelFactory(viewModelType => _container.Resolve(viewModelType));
+
+            // Set a factory for the ViewModelLocator to use the container to construct view models so their 
+            // dependencies get injected by the container
+            ViewModelLocationProvider.SetDefaultViewModelFactory(
+                viewModelType =>
+                    _container.Resolve(viewModelType));
             return Task.FromResult<object>(null);
         }
     }

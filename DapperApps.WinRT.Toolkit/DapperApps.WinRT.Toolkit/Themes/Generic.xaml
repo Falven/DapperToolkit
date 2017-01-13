@@ -12,18 +12,16 @@
 <ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:controls="using:DapperApps.WinRT"
-    xmlns:headeredContentControl="using:DapperApps.WinRT.Toolkit.HeaderedContentControl"
-    xmlns:headeredListBox="using:DapperApps.WinRT.Toolkit.HeaderedListBox">
+    xmlns:controls="using:DapperApps.WinRT.Toolkit.Controls">
 
     <!--Default style for DapperApps.Phone.Controls.HeaderedContentControl-->
-    <Style TargetType="headeredContentControl:HeaderedContentControl">
+    <Style TargetType="controls:HeaderedContentControl">
         <Setter Property="HorizontalContentAlignment" Value="Left"/>
         <Setter Property="VerticalContentAlignment" Value="Top"/>
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="headeredContentControl:HeaderedContentControl">
+                <ControlTemplate TargetType="controls:HeaderedContentControl">
                     <Grid Background="{TemplateBinding Background}">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
@@ -51,7 +49,7 @@
     </Style>
 
     <!--Default style for DapperApps.Phone.Controls.HeaderedListBox-->
-    <Style TargetType="headeredListBox:HeaderedListBox">
+    <Style TargetType="controls:HeaderedListBox">
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="Foreground" Value="{StaticResource PhoneForegroundBrush}"/>
         <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
@@ -61,7 +59,7 @@
         <Setter Property="Padding" Value="0"/>
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="headeredListBox:HeaderedListBox">
+                <ControlTemplate TargetType="controls:HeaderedListBox">
                     <ScrollViewer x:Name="ScrollViewer"
                                   BorderBrush="{TemplateBinding BorderBrush}"
                                   BorderThickness="{TemplateBinding BorderThickness}"

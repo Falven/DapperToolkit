@@ -12,7 +12,7 @@
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
-namespace DapperApps.WinRT.Toolkit.HeaderedListBox
+namespace DapperApps.WinRT.Toolkit.Controls
 {
     /// <summary>
     /// A ListBox with scrolling Header and content.

@@ -12,7 +12,7 @@
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
-namespace DapperApps.WinRT.Toolkit.HeaderedContentControl
+namespace DapperApps.WinRT.Toolkit.Controls
 {
     /// <summary>
     /// Provides the base implementation for controls that contain a single

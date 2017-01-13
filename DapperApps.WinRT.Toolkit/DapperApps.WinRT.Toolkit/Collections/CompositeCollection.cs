@@ -13,15 +13,16 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using DapperApps.WinRT.Toolkit.CompositeCollection;
 
-namespace DapperApps.WinRT.Toolkit.CompositeCollection
+namespace DapperApps.WinRT.Toolkit.Collections
 {
     /// <summary>
     /// TODO
     /// </summary>
     public class CompositeCollection : ObservableCollection<object>
     {
-        Collection<IEnumerable> _collections;
+        readonly Collection<IEnumerable> _collections;
 
         public CompositeCollection()
             : base()

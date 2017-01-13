@@ -3,6 +3,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <x:String x:Key="CompanyTitle">Dapper-Apps</x:String>
-    <x:String x:Key="ApplicationTitle">Dapper Toolkit W</x:String>
+    <x:String x:Key="ApplicationTitle">Dapper Toolkit</x:String>
+    <x:String x:Key="ApplicationSubtitle">Samples</x:String>
 
 </ResourceDictionary>

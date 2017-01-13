@@ -13,7 +13,7 @@ using System.Collections.Generic;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Media;
 
-namespace DapperApps.WinRT.Toolkit.Control
+namespace DapperApps.WinRT.Toolkit.Controls
 {
     //TODO Write a controll that displays some sort of error popup on the top of a page.
     // TODO Fix nested searching for vs. Right now only searches top element.

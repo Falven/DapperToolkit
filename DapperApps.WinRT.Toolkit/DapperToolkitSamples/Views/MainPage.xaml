@@ -6,9 +6,12 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:mvvm="using:Microsoft.Practices.Prism.Mvvm"
     xmlns:storeApps="using:Microsoft.Practices.Prism.StoreApps"
+    xmlns:controls="using:DapperApps.WinRT.Toolkit.Controls"
+    xmlns:mock="using:DapperToolkitSamples.ViewModels.Mock"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
-    mvvm:ViewModelLocator.AutoWireViewModel="True">
+    Background="{StaticResource PrimaryBackgroundBrush}"
+    mvvm:ViewModelLocator.AutoWireViewModel="True"
+    d:DataContext="{d:DesignInstance Type=mock:MainPageMockViewModel, IsDesignTimeCreatable=True}">
 
     <Page.Transitions>
         <TransitionCollection>
@@ -20,17 +23,46 @@
         </TransitionCollection>
     </Page.Transitions>
 
-    <Grid>
+    <Grid Margin="0,-26.667,0,0">
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <StackPanel>
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition FromHorizontalOffset="0" FromVerticalOffset="800"/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
 
+        <Border Grid.Row="0"
+                Background="{StaticResource PrimaryAccentBrush}">
             <TextBlock Text="{Binding Source={StaticResource ApplicationTitle}, Converter={StaticResource UpperCaseConverter}}"
-                       Style="{StaticResource DapperTextTitleStyle}"/>
+                   Style="{StaticResource TextBlockTitleStyle}"/>
+        </Border>
 
-        </StackPanel>
+        <Border Grid.Row="1"
+                Background="{StaticResource SecondaryAccentBrush}">
+            <TextBlock Text="{Binding Source={StaticResource ApplicationSubtitle}, Converter={StaticResource UpperCaseConverter}}"
+                       Style="{StaticResource TextBlockSubtitleStyle}"/>
+        </Border>
+
+        <ListBox Grid.Row="2"
+                 Background="Transparent"
+                 ItemsSource="{Binding Samples}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <ListBoxItem>
+                        <Button Command="{Binding NavigationCommand}"
+                                Style="{StaticResource EmptyButtonStyle}">
+                            <controls:HeaderedContentControl Style="{StaticResource MultilineHyperlinkStyle}"
+                                                             Header="{Binding Header}"
+                                                             Content="{Binding Description}"/>
+                        </Button>
+                    </ListBoxItem>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
     </Grid>
 </storeApps:VisualStateAwarePage>

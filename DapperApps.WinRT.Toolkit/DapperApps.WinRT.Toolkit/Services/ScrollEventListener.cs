@@ -14,9 +14,10 @@ using System.Windows.Input;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Data;
+
 // ReSharper disable NotResolvedInText
 
-namespace DapperApps.WinRT.Toolkit.ScrollEvent
+namespace DapperApps.WinRT.Toolkit.Services
 {
     /// <summary>
     /// A listener class that provides events for various scrolling scenarios.

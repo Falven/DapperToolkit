@@ -7,10 +7,12 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/ResourceDictionaries/Constants.xaml"/>
-                <ResourceDictionary Source="/ResourceDictionaries/Converters.xaml"/>
-                <ResourceDictionary Source="/ResourceDictionaries/Fonts.xaml" />
-                <ResourceDictionary Source="/ResourceDictionaries/Styles.xaml" />
+                <!--If multiple merged dictionaries exist, these dictionaries are checked in the inverse of the order in which they are declared in the MergedDictionaries property.-->
+                <ResourceDictionary Source="ResourceDictionaries/Converters.xaml" />
+                <ResourceDictionary Source="ResourceDictionaries/Styles.xaml"/>
+                <ResourceDictionary Source="ResourceDictionaries/Colors.xaml" />
+                <ResourceDictionary Source="ResourceDictionaries/Fonts.xaml" />
+                <ResourceDictionary Source="ResourceDictionaries/Constants.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
