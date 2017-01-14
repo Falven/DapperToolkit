@@ -15,10 +15,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Converters\CaseConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\RandomEx.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Sample.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\Contracts\IMainPageViewModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\Mock\MainPageMockViewModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\Runtime\MainPageViewModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\Runtime\ScrollEventSamplePageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MainPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ScrollEventSamplePageViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="$(MSBuildThisFileDirectory)App.xaml">
@@ -79,5 +77,8 @@
     <Content Include="$(MSBuildThisFileDirectory)Assets\Images\Square71x71Logo.scale-240.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Images\StoreLogo.scale-240.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Images\WideLogo.scale-240.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Services\" />
   </ItemGroup>
 </Project>

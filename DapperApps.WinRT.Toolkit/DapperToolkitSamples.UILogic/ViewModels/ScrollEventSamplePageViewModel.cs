@@ -9,13 +9,20 @@
  * To see the article about this app, visit http://www.dapper-apps.com/DapperToolkit
  */
 
-using System.Collections.ObjectModel;
-using DapperToolkitSamples.Models;
+using Microsoft.Practices.Prism.Mvvm;
+using Microsoft.Practices.Prism.Mvvm.Interfaces;
 
-namespace DapperToolkitSamples.ViewModels.Contracts
+namespace DapperToolkitSamples.ViewModels
 {
-    public interface IMainPageViewModel
+    public class ScrollEventSamplePageViewModel : ViewModel
     {
-        ObservableCollection<Sample> Samples { get; }
+        private ISessionStateService _sessionState;
+        private INavigationService _navigationService;
+
+        public ScrollEventSamplePageViewModel(ISessionStateService sessionState, INavigationService navigationService)
+        {
+            _sessionState = sessionState;
+            _navigationService = navigationService;
+        }
     }
 }

@@ -9,9 +9,9 @@
  * To see the article about this app, visit http://www.dapper-apps.com/DapperToolkit
  */
 
+using Microsoft.Practices.Prism.Mvvm;
 using System.Threading.Tasks;
 using Windows.ApplicationModel.Activation;
-using Microsoft.Practices.Prism.Mvvm;
 using Microsoft.Practices.Unity;
 
 // The Blank Application template is documented at http://go.microsoft.com/fwlink/?LinkId=391641
@@ -52,8 +52,7 @@ namespace DapperToolkitSamples
             // Set a factory for the ViewModelLocator to use the container to construct view models so their 
             // dependencies get injected by the container
             ViewModelLocationProvider.SetDefaultViewModelFactory(
-                viewModelType =>
-                    _container.Resolve(viewModelType));
+                viewModelType => _container.Resolve(viewModelType));
             return Task.FromResult<object>(null);
         }
     }

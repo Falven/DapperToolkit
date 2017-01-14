@@ -10,52 +10,36 @@
  */
 
 using DapperToolkitSamples.Models;
-using DapperToolkitSamples.ViewModels.Contracts;
 using Microsoft.Practices.Prism.Commands;
 using Microsoft.Practices.Prism.Mvvm;
 using Microsoft.Practices.Prism.Mvvm.Interfaces;
 using System.Collections.ObjectModel;
-using System.Windows.Input;
 
 namespace DapperToolkitSamples.ViewModels
 {
-    public class MainPageViewModel : ViewModel, IMainPageViewModel
+    public class MainPageViewModel : ViewModel
     {
-        #region Services
         private readonly ISessionStateService _sessionStateService;
-        private INavigationService _navigationService;
-        #endregion
+        private readonly INavigationService _navigationService;
+
+        private ObservableCollection<Sample> _samples;
 
         public MainPageViewModel(ISessionStateService sessionStateService, INavigationService navigationService)
         {
             _sessionStateService = sessionStateService;
             _navigationService = navigationService;
-            _samples = new ObservableCollection<Sample>
+
+            Samples = new ObservableCollection<Sample>
             {
-                new Sample("Scroll Events", "Scroll Events", new DelegateCommand(() =>
-                {
-                    try
-                    {
-                        _navigationService.Navigate("ScrollEventSample", null);
-                    }
-                    catch (System.Exception e)
-                    {
-		                throw;
-                    }
-                }))
+                new Sample("Scroll Events", "Scroll Events",
+                    new DelegateCommand(() => _navigationService.Navigate("ScrollEventSample", null)))
             };
         }
 
-        #region Properties
-        private ObservableCollection<Sample> _samples;
         public ObservableCollection<Sample> Samples
         {
             get { return _samples; }
             set { SetProperty(ref _samples, value); }
         }
-        #endregion
-
-        #region Commands
-        #endregion
     }
 }

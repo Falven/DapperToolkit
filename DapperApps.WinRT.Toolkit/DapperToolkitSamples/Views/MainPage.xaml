@@ -4,14 +4,12 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:mvvm="using:Microsoft.Practices.Prism.Mvvm"
     xmlns:storeApps="using:Microsoft.Practices.Prism.StoreApps"
+    xmlns:mvvm="using:Microsoft.Practices.Prism.Mvvm"
     xmlns:controls="using:DapperApps.WinRT.Toolkit.Controls"
-    xmlns:mock="using:DapperToolkitSamples.ViewModels.Mock"
     mc:Ignorable="d"
-    Background="{StaticResource PrimaryBackgroundBrush}"
     mvvm:ViewModelLocator.AutoWireViewModel="True"
-    d:DataContext="{d:DesignInstance Type=mock:MainPageMockViewModel, IsDesignTimeCreatable=True}">
+    Background="{StaticResource PrimaryBackgroundBrush}">
 
     <Page.Transitions>
         <TransitionCollection>
@@ -25,27 +23,29 @@
 
     <Grid Margin="0,-26.667,0,0">
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
         <Grid.ChildrenTransitions>
             <TransitionCollection>
-                <EntranceThemeTransition FromHorizontalOffset="0" FromVerticalOffset="800"/>
+                <EntranceThemeTransition FromHorizontalOffset="0" FromVerticalOffset="800" />
             </TransitionCollection>
         </Grid.ChildrenTransitions>
 
         <Border Grid.Row="0"
                 Background="{StaticResource PrimaryAccentBrush}">
-            <TextBlock Text="{Binding Source={StaticResource ApplicationTitle}, Converter={StaticResource UpperCaseConverter}}"
-                   Style="{StaticResource TextBlockTitleStyle}"/>
+            <TextBlock
+                Text="{Binding Source={StaticResource ApplicationTitle}, Converter={StaticResource UpperCaseConverter}}"
+                Style="{StaticResource TextBlockTitleStyle}" />
         </Border>
 
         <Border Grid.Row="1"
                 Background="{StaticResource SecondaryAccentBrush}">
-            <TextBlock Text="{Binding Source={StaticResource ApplicationSubtitle}, Converter={StaticResource UpperCaseConverter}}"
-                       Style="{StaticResource TextBlockSubtitleStyle}"/>
+            <TextBlock
+                Text="{Binding Source={StaticResource ApplicationSubtitle}, Converter={StaticResource UpperCaseConverter}}"
+                Style="{StaticResource TextBlockSubtitleStyle}" />
         </Border>
 
         <ListBox Grid.Row="2"
@@ -54,11 +54,10 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <ListBoxItem>
-                        <Button Command="{Binding NavigationCommand}"
-                                Style="{StaticResource EmptyButtonStyle}">
+                        <Button Command="{Binding NavigationCommand}">
                             <controls:HeaderedContentControl Style="{StaticResource MultilineHyperlinkStyle}"
                                                              Header="{Binding Header}"
-                                                             Content="{Binding Description}"/>
+                                                             Content="{Binding Description}" />
                         </Button>
                     </ListBoxItem>
                 </DataTemplate>

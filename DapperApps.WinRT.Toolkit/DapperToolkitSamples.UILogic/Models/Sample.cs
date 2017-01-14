@@ -9,14 +9,22 @@
  * To see the article about this app, visit http://www.dapper-apps.com/DapperToolkit
  */
 
+using System;
 using System.Windows.Input;
 
 namespace DapperToolkitSamples.Models
 {
     public class Sample
     {
-        public Sample(string header, string description, ICommand navigationCommand = null)
+        public Sample(string header, string description, ICommand navigationCommand)
         {
+            if(string.IsNullOrWhiteSpace(header))
+                throw new ArgumentException(nameof(header));
+            if(string.IsNullOrWhiteSpace(description))
+                throw new ArgumentException(nameof(description));
+            if(null == navigationCommand)
+                throw new ArgumentNullException(nameof(navigationCommand));
+
             Header = header;
             Description = description;
             NavigationCommand = navigationCommand;
