@@ -17,9 +17,7 @@
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
 
-                        <ContentPresenter x:Name="Header"
-                                          Grid.Row="0"
-                                          Content="{TemplateBinding Header}"
+                        <ContentPresenter Content="{TemplateBinding Header}"
                                           ContentTemplate="{TemplateBinding HeaderTemplate}"
                                           Margin="{TemplateBinding Padding}"
                                           HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
