@@ -5,5 +5,10 @@
     <x:String x:Key="CompanyTitle">Dapper-Apps</x:String>
     <x:String x:Key="ApplicationTitle">Dapper Toolkit</x:String>
     <x:String x:Key="ApplicationSubtitle">Samples</x:String>
+    
+    <x:Int32 x:Key="PhoneFontSizeExtraLarge">24</x:Int32>
+    <x:Int32 x:Key="PhoneFontSizeLarge">18</x:Int32>
+    <x:Int32 x:Key="PhoneFontSizeNormal">14</x:Int32>
+    <x:Int32 x:Key="PhoneFontSizeSmall">12</x:Int32>
 
 </ResourceDictionary>

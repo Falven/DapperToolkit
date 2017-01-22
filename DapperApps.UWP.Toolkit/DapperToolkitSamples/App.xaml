@@ -1,11 +1,11 @@
 ﻿<windows:PrismUnityApplication
-    x:Class="DapperToolkitSamples.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:windows="using:Prism.Unity.Windows"
+    x:Class="DapperToolkitSamples.App"
     RequestedTheme="Light">
 
-    <Application.Resources>
+    <windows:PrismUnityApplication.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <!--If multiple merged dictionaries exist, these dictionaries are checked in the inverse of the order in which they are declared in the MergedDictionaries property.-->
@@ -17,6 +17,6 @@
             </ResourceDictionary.MergedDictionaries>
             <!--  Converters  -->
         </ResourceDictionary>
-    </Application.Resources>
+    </windows:PrismUnityApplication.Resources>
 
 </windows:PrismUnityApplication>

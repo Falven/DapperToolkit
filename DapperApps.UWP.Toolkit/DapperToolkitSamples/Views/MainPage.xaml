@@ -8,7 +8,7 @@
     xmlns:controls="using:DapperApps.UWP.Toolkit.Controls"
     mvvm:ViewModelLocator.AutoWireViewModel="True"
     mc:Ignorable="d"
-    Background="{StaticResource PrimaryBackgroundBrush}">
+    d:DataContext="{d:DesignData /SampleData/MainPageViewModelSampleData.xaml}">
 
     <Page.Transitions>
         <TransitionCollection>
@@ -20,7 +20,7 @@
         </TransitionCollection>
     </Page.Transitions>
 
-    <Grid>
+    <Grid Background="{StaticResource PrimaryBackgroundBrush}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
@@ -49,16 +49,16 @@
 
         <ListBox Grid.Row="2"
                  Background="Transparent"
-                 ItemsSource="{Binding Samples}">
+                 ItemsSource="{Binding Samples}"
+                 HorizontalContentAlignment="Stretch">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <ListBoxItem>
-                        <Button Command="{Binding NavigationCommand}">
-                            <controls:HeaderedContentControl Style="{StaticResource MultilineHyperlinkStyle}"
-                                                             Header="{Binding Header}"
-                                                             Content="{Binding Description}" />
-                        </Button>
-                    </ListBoxItem>
+                    <Button Command="{Binding NavigationCommand}"
+                            Style="{StaticResource EmptyButtonStyle}">
+                        <controls:HeaderedContentControl Style="{StaticResource MultilineHyperlinkStyle}"
+                                                         Header="{Binding Header}"
+                                                         Content="{Binding Description}" />
+                    </Button>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
